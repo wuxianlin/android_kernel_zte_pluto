@@ -1,0 +1,57 @@
+
+menu "ZTE Sensors Support"
+
+config ZTE_SENSORS
+    bool "ZTE_SENSORS"
+	default n
+	depends on I2C && SYSFS
+    help
+      support for zte sensors.
+
+config SENSORS_TMD2771
+	bool "Taos TMD2771 digital ALS and proximity sensor"
+	default n
+	depends on ZTE_SENSORS
+	help
+	  If you say yes here you get support for the Taos TMD2771
+	  digital ALS and proximity sensor.
+
+	  This driver can also be built as a module.  If so, the module
+	  will be called tmd2771.
+
+config TMD2771_SUSPEND_POWEROFF
+	bool "Taos TMD2771 suspend power off"
+	default n
+	depends on SENSORS_TMD2771 && ZTE_SENSORS
+	help
+	  If you say yes here, the device power wil be shutdown when system
+	  enter suspend.
+
+config SENSORS_AK8962
+	bool "AK8962 compass support"
+	default n
+	depends on ZTE_SENSORS
+	help
+	  If you say yes here you get support for Asahi Kasei's
+	  orientation sensor AK8962.
+
+config SENSORS_L3G4200D
+	bool "L3G4200D gyroscope support"
+	default n
+	depends on ZTE_SENSORS
+	help
+	  If you say yes here you get support for STMicroelectronics
+	  L3G4200D groscope sensor.
+
+config SENSORS_LSM330D_G
+	bool "LSM330D gyroscope support"
+	default n
+	depends on ZTE_SENSORS
+	help
+	  If you say yes here you get support for STMicroelectronics
+	  LSM330D groscope sensor.
+
+source "drivers/hwmon/sensors/accel/Kconfig"
+
+endmenu
+

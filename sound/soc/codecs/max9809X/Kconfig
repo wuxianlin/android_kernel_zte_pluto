@@ -1,0 +1,16 @@
+config SND_SOC_MAX9809X
+	tristate "MAX9809X Codec"
+	
+config DEVICE_MAX98095	
+    bool "MAX98095 codec"
+	depends on SND_SOC_MAX9809X
+	default y
+    help
+        Support for max98095 codec	
+
+config DEVICE_MAX98096	
+    bool "MAX98096 codec"
+	depends on SND_SOC_MAX9809X
+	default n
+    help
+        Support for max98096 codec	

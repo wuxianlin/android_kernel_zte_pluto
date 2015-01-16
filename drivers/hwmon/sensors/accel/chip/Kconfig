@@ -1,0 +1,63 @@
+#
+# Accelemeter chips for auto check
+#
+
+config ACCEL_SENSORS_LIS3DH
+	bool "LIS3DH Accelemeter support"
+	default n
+	depends on ACCEL_SENSORS
+	help
+	  If you say yes here you get support for STMicroelectronics
+	  LIS3DH accelemeter sensor.
+
+config SENSORS_LIS3DH_AXISMAP
+	int "LIS3DH Accelemeter axis map"
+	default 0
+	depends on ACCEL_SENSORS && ACCEL_SENSORS_LIS3DH
+	help
+	  Set the relation between chip axis and board axis
+
+config ACCEL_SENSORS_LSM330D_A
+	bool "LSM330D Accelemeter support"
+	default n
+	depends on ACCEL_SENSORS
+	help
+	  If you say yes here you get support for STMicroelectronics
+	  LSM330D accelemeter sensor.
+
+config SENSORS_LSM330D_A_AXISMAP
+	int "LSM330D Accelemeter axis map"
+	default 0
+	depends on ACCEL_SENSORS && ACCEL_SENSORS_LSM330D_A
+	help
+	  Set the relation between chip axis and board axis
+
+config ACCEL_SENSORS_MMA845X
+	bool "MMA845X accelemeter support"
+	default n
+	depends on ACCEL_SENSORS
+	help
+	  If you say yes here you get support for Freescale
+	  MMA845X accelemeter sensor.
+	  
+config SENSORS_MMA845X_AXISMAP
+	int "MMA845X Accelemeter axis map"
+	default 0
+	depends on ACCEL_SENSORS && ACCEL_SENSORS_MMA845X
+	help
+	  Set the relation between chip axis and board axis
+
+config ACCEL_SENSORS_KXTF9
+	bool "KXTF9 accelemeter support"
+	default n
+	depends on ACCEL_SENSORS
+	help
+	  If you say yes here you get support for KIONIX
+	  KXTIK-1004 accelemeter sensor.
+
+config SENSORS_KXTF9_AXISMAP
+	int "KXTF9 Accelemeter axis map"
+	default 0
+	depends on ACCEL_SENSORS && ACCEL_SENSORS_KXTF9
+	help
+	  Set the relation between chip axis and board axis

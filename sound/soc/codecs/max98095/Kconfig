@@ -1,0 +1,2 @@
+config SND_SOC_MAX98095
+	tristate "MAX98095 Codec"

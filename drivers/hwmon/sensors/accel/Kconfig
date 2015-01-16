@@ -1,0 +1,14 @@
+#
+# Accelemeter driver
+#
+menuconfig ACCEL_SENSORS
+	bool "Auto check accelemeter driver"
+	default n
+	depends on ZTE_SENSORS
+	---help---
+	  Say Y here to get to see options for device drivers from various
+	  different categories. This option alone does not add any kernel code.
+
+	  If you say N, all options in this submenu will be skipped and disabled.
+
+source "drivers/hwmon/sensors/accel/chip/Kconfig"
